@@ -17,18 +17,24 @@
 cd webapp
 ./startFabric.sh
 cnpm install
-npm install express --save  # 会安装一个 express node后端，如果不用，可以忽略这一句，对应的后端在 web.js 中，用 node web.js 启动，localhost:3000 查看
 node enrollAdmin.js
 node registerUser.js
 node query.js
+
+# 安装一个 express nodejs后端，如果不用，可以忽略此部分
+npm install express --save  
+# 对应的后端代码在 web.js 中
+node web.js #启动
+localhost:3000 #查看
 ```
 
 ## 停止
 在 ./webapp/ 目录下
 在命令行中输入
 ```bash
+# 关闭网络
 ./stopFabric.sh
-# 清理残留 docker volume 
+
+# 清理残留 docker volume，输入 y 确认清理 
 docker volume prune
-# 输入 y 确认清理
 ```
